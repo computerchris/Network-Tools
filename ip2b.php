@@ -4,7 +4,7 @@
 </a>
 <br />
 <a>IP:
-<form method="POST" name="ip2b" id="ip2b" action="<?=$rel_dir?>ip2bpop.php">
+<form method="POST" name="ip2b" id="ip2b" action="/components/infusions/networktools/ip2bpop.php">
 <input type="number" name="octet1" maxlength="3"> 
 <input type="number" name="octet2" maxlength="3">
 <input type="number" name="octet3" maxlength="3">

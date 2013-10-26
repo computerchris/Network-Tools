@@ -1,9 +1,14 @@
 <?php
-$host2 = $_POST[tracerthost];
-$cmd = "traceroute $host2";
-exec ($cmd, $responseArray);
-foreach($responseArray as $responseString){ //The result of the command comes back as an array and if you try to echo it directly you get "Array" so I used a foreach loop to get each line as a string
-echo ("$responseString<br />"); //each line should be on a new line in the html
+$hostrawB = $_POST[tracerthost];
+$BADB = array("<",">","&","/","*");
+$hostnotagsB = strip_tags($hostrawB);
+$hostremB = str_replace($BADB, '', $hostnotagsB);
+$hostnotagsB = strip_tags($hostremB);
+$hostcleanB = htmlspecialchars($hostnotagsB, ENT_QUOTES, 'UTF-8');
+$cmdB = "traceroute $hostcleanB";
+exec ($cmdB, $responseArrayB);
+foreach($responseArrayB as $responseStringB){ //The result of the command comes back as an array and if you try to echo it directly you get "Array" so I used a foreach loop to get each line as a string
+echo ("$responseStringB<br />"); //each line should be on a new line in the html
 }
-//I copy pasta'd the ping program and replaced every instance of ping with tracert
 ?>
+

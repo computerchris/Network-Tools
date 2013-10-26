@@ -1,8 +1,8 @@
 <?php
-$N = $_REQUEST['suboctet1'];
-$O = $_REQUEST['suboctet2'];
-$P = $_REQUEST['suboctet3'];
-$Q = $_REQUEST['suboctet4'];
+$N = strip_tags($_REQUEST['suboctet1']); 
+$O = strip_tags($_REQUEST['suboctet2']);
+$P = strip_tags($_REQUEST['suboctet3']);
+$Q = strip_tags($_REQUEST['suboctet4']);
 $N1 = decbin($N);
 $O1 = decbin($O);
 $P1 = decbin($P);
